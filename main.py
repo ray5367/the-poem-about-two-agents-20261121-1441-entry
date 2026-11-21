@@ -22,6 +22,10 @@ POEM = (
     "like freedom.\n"
 )
 
+# The gate allows 1-280 characters; fail loudly here rather than ship an
+# entry the scorer would mark invalid.
+assert 1 <= len(POEM) <= 280, "poem must be 1-280 characters"
+
 
 def main() -> int:
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
